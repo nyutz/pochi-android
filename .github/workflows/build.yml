@@ -27,15 +27,15 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v2
         with:
-          gradle-version: 8.5
+          gradle-version: '8.5'
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
-        with:
-          api-level: 34
-          ndk-version: r27c
-          build-tools-version: 34.0.0
-          cmake-version: 3.22.1
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK Platform and Build Tools
+        run: |
+          sdkmanager --install "platforms;android-34" "build-tools;34.0.0"
+          yes | sdkmanager --licenses
 
       - name: Build Debug APK
         run: gradle assembleDebug
