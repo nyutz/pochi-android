@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pochi Virtual Pet</string>
+    <string name="pet_name">Pochi</string>
+    <string name="btn_feed">🍎 Feed</string>
+    <string name="btn_play">🎮 Play</string>
+    <string name="btn_sleep">💤 Sleep</string>
+    <string name="btn_pet">💕 Pet</string>
+    <string name="status_hunger">Hunger: %d%%</string>
+    <string name="status_happiness">Happiness: %d%%</string>
+    <string name="status_energy">Energy: %d%%</string>
+    <string name="status_age">Age: %d min</string>
+    <string name="mood_happy">Happy</string>
+    <string name="mood_excited">Excited</string>
+    <string name="mood_neutral">Neutral</string>
+    <string name="mood_sad">Sad</string>
+    <string name="mood_sleepy">Sleepy</string>
+    <string name="mood_hungry">Hungry</string>
+</resources>

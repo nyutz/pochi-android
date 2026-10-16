@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <!-- Pet ASCII Art Display -->
+    <TextView
+        android:id="@+id/tvPetArt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/pet_name"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:lineSpacingMultiplier="1.1"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@drawable/pet_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="      \\  |  /\n       \\ | /\n    ▄▄▄▄▄▄▄▄▄\n   █  ●   ●  █\n   █    △    █\n   █  \\___/  █\n    ▀▀▀▀▀▀▀▀▀\n      ∪   ∪\n    \\  (^o^)  /\n  ★  ~ ♪  ~  ★" />
+
+    <!-- Pet Name and Mood -->
+    <TextView
+        android:id="@+id/tvPetName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/pet_name"
+        android:textColor="@color/text_primary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvPetArt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/mood_neutral"
+        android:textColor="@color/text_secondary"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvPetName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Status Bars Container -->
+    <LinearLayout
+        android:id="@+id/llStatusContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/status_bg"
+        app:layout_constraintTop_toBottomOf="@id/tvMood"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvHunger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/status_hunger"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            tools:text="Hunger: 50%" />
+
+        <ProgressBar
+            android:id="@+id/pbHunger"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginBottom="12dp"
+            android:progress="50"
+            android:max="100"
+            android:progressTint="@color/btn_feed"
+            android:progressBackgroundTint="#FFE0E0E0" />
+
+        <TextView
+            android:id="@+id/tvHappiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/status_happiness"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            tools:text="Happiness: 50%" />
+
+        <ProgressBar
+            android:id="@+id/pbHappiness"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginBottom="12dp"
+            android:progress="50"
+            android:max="100"
+            android:progressTint="@color/btn_play"
+            android:progressBackgroundTint="#FFE0E0E0" />
+
+        <TextView
+            android:id="@+id/tvEnergy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/status_energy"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            tools:text="Energy: 50%" />
+
+        <ProgressBar
+            android:id="@+id/pbEnergy"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginBottom="12dp"
+            android:progress="50"
+            android:max="100"
+            android:progressTint="@color/btn_sleep"
+            android:progressBackgroundTint="#FFE0E0E0" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/status_age"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:gravity="center"
+            tools:text="Age: 0 min" />
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/llStatusContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnFeed"
+            style="@style/Widget.Pochi.Button.Feed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/btn_feed" />
+
+        <Button
+            android:id="@+id/btnPlay"
+            style="@style/Widget.Pochi.Button.Play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/btn_play" />
+
+        <Button
+            android:id="@+id/btnSleep"
+            style="@style/Widget.Pochi.Button.Sleep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/btn_sleep" />
+
+        <Button
+            android:id="@+id/btnPet"
+            style="@style/Widget.Pochi.Button.Pet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_pet" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
