@@ -25,17 +25,14 @@ jobs:
           java-version: '17'
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v2
+        uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '8.5'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK Platform and Build Tools
-        run: |
-          sdkmanager --install "platforms;android-34" "build-tools;34.0.0"
-          yes | sdkmanager --licenses
+        with:
+          packages: platforms;android-34 build-tools;34.0.0
 
       - name: Build Debug APK
         run: gradle assembleDebug
